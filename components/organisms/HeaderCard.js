@@ -1,6 +1,5 @@
 import React from "react";
 import { ButtonIcon, Rating, Typography } from "../../components";
-import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 import { BookmarkIcon } from "@heroicons/react/24/solid";
 const HeaderCard = ({
   active = false,
