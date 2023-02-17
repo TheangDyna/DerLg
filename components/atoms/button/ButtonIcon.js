@@ -14,7 +14,8 @@ const ButtonIcon = ({
   return (
     <button
       className={`btn ${_square} border-none ${_variant} btn-${size} ${className}`}
-      {...rest}>
+      {...rest}
+    >
       {children}
     </button>
   );
