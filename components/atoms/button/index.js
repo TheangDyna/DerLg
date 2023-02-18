@@ -1,3 +1,4 @@
-export * from "./Button";
-export * from "./ButtonIcon";
-export * from "./SampleButton";
+import Button from "./Button";
+import ButtonIcon from "./ButtonIcon";
+
+export { Button, ButtonIcon };

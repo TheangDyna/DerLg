@@ -27,4 +27,4 @@ const Rating = ({ rating = 0, className = "" }) => {
   );
 };
 
-export { Rating };
+export default Rating;

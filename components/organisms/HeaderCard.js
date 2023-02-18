@@ -28,4 +28,4 @@ const HeaderCard = ({
   );
 };
 
-export { HeaderCard };
+export default HeaderCard;

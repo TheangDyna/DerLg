@@ -1,3 +1,2 @@
-export * from "./Rating";
-
-
+import Rating from "./Rating";
+export { Rating };

@@ -1,1 +1,2 @@
-export * from "./HeaderCard";
+import HeaderCard from "./HeaderCard";
+export { HeaderCard };

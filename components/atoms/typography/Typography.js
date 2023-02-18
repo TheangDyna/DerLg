@@ -16,4 +16,4 @@ const Typography = ({ children, variant = "base", className = "", ...rest }) => 
   );
 };
 
-export { Typography };
+export default Typography;

@@ -21,4 +21,4 @@ const ButtonIcon = ({
   );
 };
 
-export { ButtonIcon };
+export default ButtonIcon;
