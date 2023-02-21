@@ -3,7 +3,7 @@ import React from "react";
 const Typography = ({ children, variant = "base", className = "", ...rest }) => {
   const _variant =
     variant == "display"
-      ? "text-[96px] font-bold"
+      ? "text-[60px] font-bold"
       : variant == "title"
       ? "text-[24px] font-bold"
       : variant == "base"

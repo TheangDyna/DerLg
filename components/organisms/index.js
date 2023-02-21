@@ -1,2 +1,3 @@
 import HeaderCard from "./HeaderCard";
-export { HeaderCard };
+import Navbar from "./Navbar";
+export { HeaderCard, Navbar};
