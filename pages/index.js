@@ -1,15 +1,40 @@
 import React from "react";
+import Link from "next/link";
+import { useState } from "react";
 
 import { Button, HeaderCard, Typography } from "../components";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
 export default function Home() {
+  const [session, setSession] = useState(true);
+  return <>{session ? User() : Guest()}</>;
+}
+
+function Guest() {
+  return (
+    <main className="container mx-auto text-center py-20">
+      <h3 className="text-4xl font-bold">Guest Homepage</h3>
+
+      <div className="flex justify-center">
+        <Link
+          href={"/login"}
+          className="mt-5 px-10 py-1 rounded-sm bg-indigo-500 text-gray-50"
+        >
+          Sign In
+        </Link>
+      </div>
+    </main>
+  );
+}
+
+function User() {
   return (
     <div
       style={{
         backgroundImage: `url(${"https://blog.goway.com/globetrotting/wp-content/uploads/2018/08/Colourful-sunrise-in-Angkor-Wat-Siem-Reap-Cambodia-_679734163.jpg"})`,
       }}
-      className="h-screen bg-cover bg-center">
+      className="h-screen bg-cover bg-center"
+    >
       {/* Header */}
       <div className="grid grid-cols-2 h-full bg-[rgba(0,0,0,0.7)]">
         <div className="flex flex-1">
