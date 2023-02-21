@@ -5,16 +5,17 @@ import styles from "../styles/Form.module.css";
 import Image from "next/image";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdPassword } from "react-icons/md";
+import { useState } from "react";
 
 export default function Login() {
+  const [show, setShow] = useState();
   return (
     <Layout>
       <Head>
         <title>Login</title>
       </Head>
-
       <section className="w-3/4 mx-auto flex flex-col gap-10 ">
-        <div className="title">
+        <div className="title bg-loginPage">
           <h1 className="text-gray-900 text-4xl font-bold py-4">Login</h1>
           <p className="w-3/4 mx-auto text-gray-500">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -36,12 +37,15 @@ export default function Login() {
           </div>
           <div className={styles.input_group}>
             <input
-              type="password"
+              type={`${show ? "text" : "password"}`}
               name="password"
               placeholder="Password"
               className={styles.input_text}
             />
-            <span className="icon flex items-center px-4">
+            <span
+              className="icon flex items-center px-4"
+              onClick={() => setShow(!show)}
+            >
               <MdPassword size={25}></MdPassword>
             </span>
           </div>
@@ -70,7 +74,6 @@ export default function Login() {
         <p className="text-center text-gray-500">
           Don't have account ?
           <Link href={"/register"} className="text-blue-500">
-            {/* <a className="text-blue-500">Click here</a> */}
             Click here
           </Link>
         </p>
