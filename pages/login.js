@@ -18,7 +18,7 @@ export default function Login() {
         <div className="title bg-loginPage">
           <h1 className="text-gray-900 text-4xl font-bold py-4">Login</h1>
           <p className="w-3/4 mx-auto text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor sit amet.
           </p>
         </div>
 
@@ -49,8 +49,7 @@ export default function Login() {
               <MdPassword size={25}></MdPassword>
             </span>
           </div>
-        </form>
-        <form className="flex flex-col gap-5 mx-auto">
+
           {/* login button */}
           <div className="input-button text-gray-500">
             <button type="submit" className={styles.button}>
