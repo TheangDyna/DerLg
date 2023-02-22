@@ -1,14 +1,18 @@
 import React from "react";
 import Link from "next/link";
-import { useState } from "react";
-import { useSession } from "next-auth/react";
+import { getSession, useSession, signOut } from "next-auth/react";
 
 import { Button, HeaderCard, Typography } from "../components";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
 export default function Home() {
   const { data: session } = useSession();
-  return <>{session ? User({ session }) : Guest()}</>;
+  return <>{session ? User({ session, handleSignOut }) : Guest()}</>;
+
+  // sign out
+  function handleSignOut() {
+    signOut();
+  }
 }
 
 function Guest() {
@@ -28,7 +32,7 @@ function Guest() {
   );
 }
 
-function User(session) {
+function User({ session, handleSignOut }) {
   return (
     <div
       style={{
@@ -52,6 +56,9 @@ function User(session) {
                 <ArrowLongRightIcon className="w-6 h-6 ml-[24px]" />
               </Button>
             </div>
+            <Button className="mt-6" onClick={handleSignOut}>
+              Signout
+            </Button>
           </div>
         </div>
         <div className="flex flex-1 overflow-clip items-center h-full">
@@ -77,4 +84,21 @@ function User(session) {
       </div>
     </div>
   );
+}
+
+// Prevent user to access homepage without authorized
+export async function getServerSideProps({ req }) {
+  const session = await getSession({ req });
+  // if not authorize
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: { session },
+  };
 }
