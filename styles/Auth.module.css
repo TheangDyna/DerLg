@@ -3,3 +3,8 @@
   position: relative;
   overflow: hidden;
 }
+
+.bgImage {
+  background-image: url("../public/asset/login-bg.jpg");
+  background-size: cover;
+}
