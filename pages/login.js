@@ -6,9 +6,14 @@ import Image from "next/image";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdPassword } from "react-icons/md";
 import { useState } from "react";
+import { signIn, signOut } from "next-auth/react";
 
 export default function Login() {
   const [show, setShow] = useState();
+
+  async function handleGoogleSignin() {
+    signIn("google", { callbackUrl: "http://localhost:3000" }); // redirect autorized user to home page
+  }
   return (
     <Layout>
       <Head>
@@ -57,7 +62,11 @@ export default function Login() {
             </button>
           </div>
           <div className="input-button text-gray-500">
-            <button type="button" className={styles.button_costum}>
+            <button
+              type="button"
+              onClick={handleGoogleSignin}
+              className={styles.button_costum}
+            >
               <Image src={"/asset/google.svg"} width={20} height={20}></Image>{" "}
               Sign In with Google
             </button>
