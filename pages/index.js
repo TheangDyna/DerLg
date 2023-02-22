@@ -1,13 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 
 import { Button, HeaderCard, Typography } from "../components";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
 export default function Home() {
-  const [session, setSession] = useState(true);
-  return <>{session ? User() : Guest()}</>;
+  const { data: session } = useSession();
+  return <>{session ? User({ session }) : Guest()}</>;
 }
 
 function Guest() {
@@ -27,7 +28,7 @@ function Guest() {
   );
 }
 
-function User() {
+function User(session) {
   return (
     <div
       style={{
