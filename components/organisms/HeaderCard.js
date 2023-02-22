@@ -3,7 +3,7 @@ import { ButtonIcon, Rating, Typography } from "../../components";
 import { BookmarkIcon } from "@heroicons/react/24/solid";
 const HeaderCard = ({ title = "title", rating = 0, cover = "" }) => {
   return (
-    <div className="inline-flex flex-col gap-y-2">
+    <div className="flex flex-col gap-y-2">
       <Typography variant="title">{title}</Typography>
       <Rating rating={rating} />
       <div

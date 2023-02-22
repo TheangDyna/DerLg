@@ -1,2 +1,2 @@
-import Layout from "./Layout";
-export { Layout };
+import Header from "./Header";
+export { Header };

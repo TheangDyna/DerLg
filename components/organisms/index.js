@@ -1,3 +1,4 @@
 import HeaderCard from "./HeaderCard";
 import Navbar from "./Navbar";
-export { HeaderCard, Navbar};
+import ProvinceCard from "./ProvinceCard";
+export { HeaderCard, Navbar, ProvinceCard};

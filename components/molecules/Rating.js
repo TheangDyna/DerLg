@@ -15,7 +15,7 @@ const Rating = ({ rating = 0, className = "" }) => {
 
   const _style = `w-6 h-6 text-[#F0A500] ${className}`;
   return (
-    <div className="inline-flex flex-row gap-x-2">
+    <div className="flex flex-row gap-x-2">
       {rate.map((item, index) => {
         return item ? (
           <StarIconSolid key={index} className={`${_style}`} />
