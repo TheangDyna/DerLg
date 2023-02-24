@@ -7,6 +7,7 @@ import { MdPassword } from "react-icons/md";
 import Layout from "../layout/Auth";
 import { useState } from "react";
 import { useFormik } from "formik";
+import { registerValidate } from "../lib/validate";
 
 export default function Register() {
   const [show, setShow] = useState({
@@ -22,6 +23,7 @@ export default function Register() {
       password: "",
       cpassword: "", //confirm password
     },
+    validate: registerValidate,
     onSubmit,
   });
 
@@ -56,6 +58,12 @@ export default function Register() {
               <HiOutlineUser size={25}></HiOutlineUser>
             </span>
           </div>
+          {/* print error if not satisfy the validator */}
+          {formik.errors.username && formik.touched.username ? (
+            <span className="text-xs">{formik.errors.username}</span>
+          ) : (
+            <></>
+          )}
           <div className={styles.input_group}>
             <input
               type="email"
@@ -68,6 +76,12 @@ export default function Register() {
               <HiOutlineMail size={25}></HiOutlineMail>
             </span>
           </div>
+          {/* print error if not satisfy the validator */}
+          {formik.errors.email && formik.touched.email ? (
+            <span className="text-xs">{formik.errors.email}</span>
+          ) : (
+            <></>
+          )}
           <div className={styles.input_group}>
             <input
               type={`${show.password ? "text" : "password"}`}
@@ -83,6 +97,12 @@ export default function Register() {
               <MdPassword size={25}></MdPassword>
             </span>
           </div>
+          {/* print error if not satisfy the validator */}
+          {formik.errors.password && formik.touched.password ? (
+            <span className="text-xs">{formik.errors.password}</span>
+          ) : (
+            <></>
+          )}
 
           <div className={styles.input_group}>
             <input
@@ -99,6 +119,12 @@ export default function Register() {
               <MdPassword size={25}></MdPassword>
             </span>
           </div>
+          {/* print error if not satisfy the validator */}
+          {formik.errors.cpassword && formik.touched.cpassword ? (
+            <span className="text-xs">{formik.errors.cpassword}</span>
+          ) : (
+            <></>
+          )}
 
           {/* SignUp button */}
           <div className="input-button text-gray-500">
