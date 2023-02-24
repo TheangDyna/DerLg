@@ -7,9 +7,22 @@ import { HiOutlineMail } from "react-icons/hi";
 import { MdPassword } from "react-icons/md";
 import { useState } from "react";
 import { signIn, signOut } from "next-auth/react";
+import { useFormik } from "formik";
 
 export default function Login() {
   const [show, setShow] = useState();
+  // Cotum Login
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    onSubmit,
+  });
+
+  async function onSubmit(values) {
+    console.log(values);
+  }
 
   // For Google
   async function handleGoogleSignin() {
@@ -35,13 +48,17 @@ export default function Login() {
         </div>
 
         {/* form */}
-        <form className="flex flex-col gap-5 mx-auto">
+        <form
+          className="flex flex-col gap-5 mx-auto"
+          onSubmit={formik.handleSubmit} // for costum login when click submit
+        >
           <div className={styles.input_group}>
             <input
               type="email"
               name="email"
               placeholder="Email"
               className={styles.input_text}
+              {...formik.getFieldProps("email")} // for costum login
             />
             <span className="icon flex items-center px-4">
               <HiOutlineMail size={25}></HiOutlineMail>
@@ -53,6 +70,7 @@ export default function Login() {
               name="password"
               placeholder="Password"
               className={styles.input_text}
+              {...formik.getFieldProps("password")} // for costum login
             />
             <span
               className="icon flex items-center px-4"
@@ -92,8 +110,8 @@ export default function Login() {
         {/* bottom */}
         <p className="text-center text-gray-500">
           Don't have account ?
-          <Link href={"/register"} className="text-blue-500">
-            Click here
+          <Link href={"/register"} className="text-grey-700 font-bold">
+            &nbsp;Click here
           </Link>
         </p>
       </section>
