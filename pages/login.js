@@ -11,9 +11,16 @@ import { signIn, signOut } from "next-auth/react";
 export default function Login() {
   const [show, setShow] = useState();
 
+  // For Google
   async function handleGoogleSignin() {
     signIn("google", { callbackUrl: "http://localhost:3000" }); // redirect autorized user to home page
   }
+
+  // For Github
+  async function handleGithubSignin() {
+    signIn("github", { callbackUrl: "http://localhost:3000" });
+  }
+
   return (
     <Layout>
       <Head>
@@ -72,7 +79,11 @@ export default function Login() {
             </button>
           </div>
           <div className="input-button text-gray-500">
-            <button type="button" className={styles.button_costum}>
+            <button
+              type="button"
+              onClick={handleGithubSignin}
+              className={styles.button_costum}
+            >
               <Image src={"/asset/github.svg"} width={25} height={25}></Image>{" "}
               Sign In with Github
             </button>
