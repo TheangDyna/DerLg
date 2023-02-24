@@ -8,6 +8,7 @@ import { MdPassword } from "react-icons/md";
 import { useState } from "react";
 import { signIn, signOut } from "next-auth/react";
 import { useFormik } from "formik";
+import login_validate from "../lib/validate";
 
 export default function Login() {
   const [show, setShow] = useState();
@@ -17,8 +18,12 @@ export default function Login() {
       email: "",
       password: "",
     },
+    // validate user input
+    validate: login_validate,
     onSubmit,
   });
+
+  console.log(formik.errors);
 
   async function onSubmit(values) {
     console.log(values);
@@ -64,6 +69,12 @@ export default function Login() {
               <HiOutlineMail size={25}></HiOutlineMail>
             </span>
           </div>
+          {/* print error if not satisfy the validator */}
+          {formik.errors.email && formik.touched.email ? (
+            <span className="text-xs">{formik.errors.email}</span>
+          ) : (
+            <></>
+          )}
           <div className={styles.input_group}>
             <input
               type={`${show ? "text" : "password"}`}
@@ -79,6 +90,12 @@ export default function Login() {
               <MdPassword size={25}></MdPassword>
             </span>
           </div>
+          {/* print error if not satisfy the validator */}
+          {formik.errors.password && formik.touched.password ? (
+            <span className="text-xs">{formik.errors.password}</span>
+          ) : (
+            <></>
+          )}
 
           {/* login button */}
           <div className="input-button text-gray-500">
