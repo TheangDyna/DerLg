@@ -35,7 +35,6 @@ const Header = ({ data }) => {
     autoplay: true,
     autoplaySpeed: 3000,
     infinite: true,
-    // focusOnSelect: true,
     arrows: false,
     afterChange: (current) => setActiveIndex(current),
   };

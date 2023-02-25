@@ -1,2 +1,3 @@
 import Header from "./Header";
-export { Header };
+import Carousel from "./Carousel";
+export { Header, Carousel };
