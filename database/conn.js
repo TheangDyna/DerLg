@@ -7,8 +7,8 @@ const connectMongo = async () => {
     if (connection.readyState == 1) {
       return Promise.resolve(true);
     }
-  } catch (err) {
-    return Promise.reject(err);
+  } catch (error) {
+    return Promise.reject(error);
   }
 };
 
