@@ -3,6 +3,7 @@ import React from "react";
 import {
   Carousel,
   Header,
+  PlaceCard,
   ProvinceCard,
   Typography,
   VideoCard,
@@ -13,7 +14,6 @@ const Home = () => {
   return (
     <div>
       <Header data={travel} />
-      {/* body */}
       <div className="px-[80px] pt-[64px] flex flex-col gap-[48px]">
         <Typography variant="topic">Province</Typography>
         <Carousel>
@@ -24,11 +24,20 @@ const Home = () => {
           })}
         </Carousel>
         <Typography variant="topic">Videos</Typography>
-        <VideoCard
-          rating={travel[0].rating}
-          title={travel[0].title}
-          cover={travel[0].cover}
-        />
+        <Carousel>
+          {travel.map((item, index) => {
+            return (
+              <VideoCard
+                key={index}
+                cover={item.cover}
+                description={item.description}
+                video={item.video}
+              />
+            );
+          })}
+        </Carousel>
+        <Typography variant="topic">Best Places</Typography>
+        <PlaceCard cover={travel[0].cover}/>
       </div>
     </div>
   );

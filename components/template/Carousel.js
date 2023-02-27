@@ -2,10 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 
 import { ButtonIcon } from "../../components";
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from "@heroicons/react/24/solid";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 const Carousel = ({ children }) => {
   const NextButton = (props) => {
@@ -32,12 +29,13 @@ const Carousel = ({ children }) => {
   };
 
   const settings = {
+    infinite: false,
     slidesToShow: 6,
     slidesToScroll: 1,
     speed: 300,
     swipeToSlide: true,
     nextArrow: <NextButton />,
-    prevArrow: <PreviousButton />,
+    prevArrow: <PreviousButton />,  
   };
   return (
     <div className="w-full">
