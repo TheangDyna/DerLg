@@ -26,6 +26,11 @@ export default function Login() {
     onSubmit,
   });
 
+  //   {
+  //     "username": "VireakRoth",
+  //     "email": "hixena5406@v2ssr.com",
+  //     "password": "Admin1234"
+  // }
   // Costum login
   async function onSubmit(values) {
     const status = await signIn("credentials", {
