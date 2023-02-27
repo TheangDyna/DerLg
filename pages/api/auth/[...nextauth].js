@@ -45,4 +45,5 @@ export default NextAuth({
       },
     }),
   ],
+  secret: "rTDNJw301SVeLrs30hdQwGPOb4KXshC4j+Ga7m+cTl0=",
 });
