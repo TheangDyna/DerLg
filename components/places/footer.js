@@ -1,5 +1,9 @@
 import Link from "next/link";
 
 export default function footer() {
-  return <div>I'm Footer</div>;
+  return (
+    <>
+      <div className="text-3xl">I'm Footer</div>
+    </>
+  );
 }
