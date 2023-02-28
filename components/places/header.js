@@ -2,7 +2,7 @@ import { ImFacebook, ImTwitter, ImYoutube } from "react-icons/im";
 import Link from "next/link";
 export default function header() {
   return (
-    <header className="bg-gray-200 ">
+    <header className="bg-blue-900 ">
       <div className="xl:container xl:mx-auto flex flex-col items-center sm:flex-row sm:justify-between text-center py-3">
         <div className="md:flex-none w-96 order-2 sm:order-1 flex justify-center py-4 sm:py-0">
           <input

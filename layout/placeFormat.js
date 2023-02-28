@@ -8,7 +8,7 @@ export default function placeFormat({ children }) {
       <Head>
         <title>Provinces</title>
       </Head>
-      <Header></Header>
+      {/* <Header></Header> */}
       <main>{children}</main>
       <Footer></Footer>
     </div>
