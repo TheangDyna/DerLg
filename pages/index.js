@@ -59,6 +59,9 @@ function User({ session, handleSignOut }) {
             <Button className="mt-6" onClick={handleSignOut}>
               Signout
             </Button>
+            <Button className="mt-6 ml-6">
+              <Link href="./places">Places</Link>
+            </Button>
           </div>
         </div>
         <div className="flex flex-1 overflow-clip items-center h-full">
