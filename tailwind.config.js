@@ -6,7 +6,11 @@ module.exports = {
     "./layout/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        loginPage: "url('/public/asset/login-bg.jpg')",
+      },
+    },
     // fontFamily: {
     //   display: ["Montserrat", "sans-serif"],
     //   bodyEn: ["Oswald", "sans-serif"],
