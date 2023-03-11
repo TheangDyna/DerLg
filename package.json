@@ -19,6 +19,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
     "autoprefixer": "^10.4.13",
     "daisyui": "^2.47.0",
     "eslint": "8.32.0",
