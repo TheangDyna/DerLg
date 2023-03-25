@@ -2,6 +2,7 @@ import React from "react";
 
 import {
   Carousel,
+  EventCard,
   Header,
   PlaceCard,
   ProvinceCard,
@@ -23,6 +24,13 @@ const Home = () => {
             );
           })}
         </Carousel>
+        <EventCard
+          title={travel[0].title}
+          cover={
+            "https://uploads.exoticca.com/en_UK/destination/country/cambodia-events.png"
+          }
+          description={travel[0].description}
+        />
         <Typography variant="topic">Videos</Typography>
         <Carousel show={6}>
           {travel.map((item, index) => {
@@ -36,6 +44,13 @@ const Home = () => {
             );
           })}
         </Carousel>
+        <EventCard
+          title={travel[0].title}
+          cover={
+            "https://www.sokhahotels.com.kh/sihanoukville/img/theme-dinners/beach-side/gallery/beach-side.jpg"
+          }
+          description={travel[0].description}
+        />
         <Typography variant="topic">Best Places</Typography>
         <Carousel show={6}>
           {travel.map((item, index) => {
@@ -44,11 +59,21 @@ const Home = () => {
                 key={index}
                 title={item.title}
                 rating={item.rating}
-                cover={item.cover}  
+                cover={item.cover}
               />
             );
           })}
         </Carousel>
+        <EventCard
+          title={travel[0].title}
+          cover={
+            "https://i.ytimg.com/vi/AozfRX05CSQ/maxresdefault.jpg"
+          }
+          description={travel[0].description}
+        />
+      </div>
+      <div className="h-[200px]">
+        footer
       </div>
     </div>
   );

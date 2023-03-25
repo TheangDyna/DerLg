@@ -4,7 +4,7 @@ import { Typography } from "../../components";
 const ProvinceCard = ({ cover, title }) => {
   const [hover, setHover] = useState(false);
   return (
-    <div className="relative w-[250px] h-[150px] rounded-[15px] overflow-hidden cursor-pointer ">
+    <div className="relative w-[250px] h-[150px] rounded-[15px] overflow-hidden cursor-pointer">
       <div
         style={{
           backgroundImage: `url(${cover})`,
@@ -12,7 +12,7 @@ const ProvinceCard = ({ cover, title }) => {
         className={`absolute top-0 right-0 bg-center bg-cover w-full h-full duration-300 ${
           hover && "scale-125"
         }`}
-      ></div>
+      />
       <div
         onMouseOver={() => setHover(true)}
         onMouseLeave={() => setHover(false)}

@@ -2404,11 +2404,6 @@ react-dom@18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-hover-video-player@^9.7.1:
-  version "9.7.1"
-  resolved "https://registry.yarnpkg.com/react-hover-video-player/-/react-hover-video-player-9.7.1.tgz#63d291304d54e06827877c4b7bdbe5a0ca9885f7"
-  integrity sha512-mC74jCZscPui+vtJUFdwhb6pM+4UQI9ZepzAQKAN8l5sOQRA1AVpiCDl5LoTlnJETYKUc96SKaKsXW5L8Z30AQ==
-
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
