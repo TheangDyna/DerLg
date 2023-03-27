@@ -6,7 +6,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 const Navbar = ({}) => {
   return (
     <div className="absolute w-full">
-      <div className="flex justify-between items-center px-[80px] py-1">
+      <div className="flex justify-between items-center px-[80px] py-4">
         <Typography variant="title">Logo</Typography>
         <div className="flex items-center gap-4">
           <Button variant="text" className="text-[24px]">News</Button>

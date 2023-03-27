@@ -10,7 +10,7 @@ const Button = ({
 }) => {
   const _variant =
     variant == "link"
-      ? "btn-link"
+      ? "btn-link min-h-fit h-fit"
       : variant == "text"
       ? "btn-ghost"
       : variant == "outlined"
@@ -21,7 +21,8 @@ const Button = ({
   return (
     <button
       className={`text-white btn normal-case ${_variant} ${_width} btn-${size} ${className}`}
-      {...rest}>
+      {...rest}
+    >
       {children}
     </button>
   );

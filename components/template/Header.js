@@ -43,7 +43,7 @@ const Header = ({ data }) => {
       style={{
         backgroundImage: `url(${data[activeIndex].cover})`,
       }}
-      className="h-screen bg-cover bg-center"
+      className="h-screen bg-cover bg-cente duration-200"
     >
       <Navbar />
       <div className="h-full bg-[rgba(0,0,0,0.7)] flex flex-col justify-center">

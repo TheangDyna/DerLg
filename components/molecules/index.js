@@ -1,2 +1,3 @@
 import Rating from "./Rating";
-export { Rating };
+import SocialButton from "./SocialButton";
+export { Rating, SocialButton };

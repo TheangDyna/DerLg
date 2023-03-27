@@ -5,6 +5,8 @@ import VideoCard from "./VideoCard";
 import PlaceCard from "./PlaceCard";
 import EventCard from "./EventCard";
 import Footer from "./Footer";
+import RegisterCard from "./RegisterCard";
+import LoginCard from "./LoginCard";
 export {
   HeaderCard,
   Navbar,
@@ -13,4 +15,6 @@ export {
   PlaceCard,
   EventCard,
   Footer,
+  RegisterCard,
+  LoginCard,
 };
