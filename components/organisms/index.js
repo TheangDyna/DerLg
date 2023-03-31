@@ -7,6 +7,7 @@ import EventCard from "./EventCard";
 import Footer from "./Footer";
 import RegisterCard from "./RegisterCard";
 import LoginCard from "./LoginCard";
+import ImageGrid from "./ImageGrid";
 export {
   HeaderCard,
   Navbar,
@@ -17,4 +18,5 @@ export {
   Footer,
   RegisterCard,
   LoginCard,
+  ImageGrid,
 };

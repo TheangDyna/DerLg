@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ButtonIcon, PlaceCard, Typography } from "../../components";
+import { ButtonIcon, Carousel, ImageGrid, PlaceCard, ProvinceCard, Typography } from "../../components";
 import { ArrowLongLeftIcon } from "@heroicons/react/24/outline";
 import { travel } from "../../utils";
 
@@ -12,7 +12,7 @@ const ProvinceDetail = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPosition = window.pageYOffset;
-      setShowText(currentScrollPosition < 250);
+      setShowText(currentScrollPosition < 500);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -80,14 +80,22 @@ const ProvinceDetail = () => {
           })}
         </div>
         <Typography variant="topic">Map</Typography>
-        <div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993507.4740047246!2d103.73298034111976!3d13.419223826921037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3110170b07d4a0f5%3A0x5ddbd370ce73acb9!2sSiem%20Reap%20Province!5e0!3m2!1sen!2skh!4v1680137698219!5m2!1sen!2skh"
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
             className="w-full h-[800px] rounded-[15px] mx-auto"
           />
-        </div>
+        <Typography variant="topic">Images</Typography>
+          <ImageGrid />
+        <Typography variant="topic">Province</Typography>
+        <Carousel show={6}>
+          {travel.map((item, index) => {
+            return (
+              <ProvinceCard key={index} cover={item.cover} title={item.title} />
+            );
+          })}
+        </Carousel>
       </div>
       <div className="h-[500px]" />
     </div>
