@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import { ButtonIcon, Rating, Typography } from "../../components";
 import { BookmarkIcon } from "@heroicons/react/24/solid";
-const HeaderCard = ({ title = "title", rating = 0, cover = "" }) => {
+import { useRouter } from "next/router";
+
+const HeaderCard = ({
+  title = "title",
+  rating = 0,
+  cover = "",
+  id = "1",
+}) => {
   const [hover, setHover] = useState(false);
+  const router = useRouter();
   return (
     <div className="flex flex-col gap-y-2">
-      <Typography variant="title">{title}</Typography>
+      <Typography variant="title" className="text-white">
+        {title}
+      </Typography>
       <Rating rating={rating} />
-      <div className="relative rounded-[15px] p-3 w-[250px] h-[300px] overflow-hidden cursor-pointer">
+      <div
+        className="relative rounded-[15px] p-3 w-[250px] h-[300px] overflow-hidden cursor-pointer"
+        onClick={()=> router.push(`/place/${id}`)}
+      >
         <div
           style={{
             backgroundImage: `url(${cover})`,

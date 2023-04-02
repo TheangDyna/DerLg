@@ -27,6 +27,7 @@ const VideoCard = ({ cover = "", video = "", description = "" }) => {
         <video
           className="relative top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           ref={videoRef}
+          loop
         >
           <source src={video} />
         </video>
@@ -46,7 +47,7 @@ const VideoCard = ({ cover = "", video = "", description = "" }) => {
         }
         className={`absolute top-0 right-0 bg-center bg-cover w-full h-full p-4 duration-300`}
       >
-        <Typography className="truncate">{description}</Typography>
+        <Typography className="truncate text-white">{description}</Typography>
         {!hover && (
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full p-4 bg-[#A2A2A2] bg-opacity-50">
             <PlayIcon className="w-6 h-6 text-white" />

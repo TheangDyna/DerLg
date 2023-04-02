@@ -15,10 +15,10 @@ const EventCard = ({ title = "title", cover = "", description = "" }) => {
       <div className="flex flex-1 h-[250px] bg-black" />
       <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center px-4">
         <div className="max-w-[500px] flex items-center flex-col text-center">
-          <Typography variant="title">{title}</Typography>
+          <Typography variant="title" className="text-white">{title}</Typography>
           <hr className="my-4 w-[300px]" />
-          <Typography className="line-clamp-3">{description}</Typography>
-          <Button variant="link" className="mt-3" onClick={() => console.log("hello")}>
+          <Typography className="line-clamp-3 text-white">{description}</Typography>
+          <Button variant="link" className="mt-3">
             Read More
           </Button>
         </div>

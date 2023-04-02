@@ -23,10 +23,10 @@ const RegisterCard = ({ login }) => {
       >
         <div className="flex flex-col p-4 mt-auto space-y-4">
           <div>
-            <Typography variant="topic" className="text-[#000000]">
+            <Typography variant="topic" className="text-black">
               Register
             </Typography>
-            <Typography className="text-[#000000]">
+            <Typography className="text-black">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididu.
             </Typography>
@@ -36,7 +36,7 @@ const RegisterCard = ({ login }) => {
               <div className="w-full flex flex-col space-y-2">
                 <div className="form-control w-full">
                   <label className="label" htmlFor="email">
-                    <span className="label-text text-[#000000]">Email</span>
+                    <span className="label-text text-black">Email</span>
                   </label>
                   <Input
                     placeholder="Your email here..."
@@ -46,7 +46,7 @@ const RegisterCard = ({ login }) => {
                 </div>
                 <div className="form-control w-full">
                   <label className="label" htmlFor="email">
-                    <span className="label-text text-[#000000]">Password</span>
+                    <span className="label-text text-black">Password</span>
                   </label>
                   <Input
                     placeholder="Your password here..."
@@ -71,32 +71,35 @@ const RegisterCard = ({ login }) => {
             )}
 
             <div className="text-right">
-              <Typography className="text-[#000000]">
+              <Typography className="text-black">
                 Already have an account?{" "}
                 <Button
-                  className="text-[#000000] font-normal px-0"
+                  className="text-black font-normal px-0"
                   variant="link"
                   onClick={login}
                 >
-                  <Typography className="text-[#000000]">Login</Typography>
+                  <Typography className="text-black">Login</Typography>
                 </Button>
               </Typography>
 
               {isMial && (
-                <Typography className="text-[#000000]">
+                <Typography className="text-black">
                   Register with Facebook or Google?{" "}
                   <Button
-                    className="text-[#000000] font-normal px-0"
+                    className="text-black font-normal px-0"
                     variant="link"
                     onClick={() => setMail(false)}
                   >
-                    <Typography className="text-[#000000]">back</Typography>
+                    <Typography className="text-black">back</Typography>
                   </Button>
                 </Typography>
               )}
             </div>
             {isMial && (
-              <Button className="bg-[#000000] bg-opacity-80 hover:bg-[#000000] hover:bg-opacity-100">
+              <Button
+                className="bg-[#000000] bg-opacity-80 hover:bg-[#000000] hover:bg-opacity-100"
+                onClick={() => window.history.back()}
+              >
                 Register
               </Button>
             )}

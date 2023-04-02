@@ -12,7 +12,7 @@ const   Typography = ({ children, variant = "base", className = "", ...rest }) =
       ? "text-[16px]"
       : "text-[16px]";
   return (
-    <p className={`text-white ${_variant} ${className}`} {...rest}>
+    <p {...rest} className={`${_variant} ${className}`} >
       {children}
     </p>
   );

@@ -14,7 +14,7 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/24/solid";
 
-const Header = ({ data }) => {
+const Header = ({ data, onNavigate }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const sliderRef = useRef(null);
@@ -50,14 +50,14 @@ const Header = ({ data }) => {
         <div className="grid grid-cols-2 items-end mt-auto">
           <div className="flex flex-1 ml-[80px]">
             <div className="w-[600px]">
-              <Typography variant="display">
+              <Typography variant="display" className="text-white">
                 {data[activeIndex].title}
               </Typography>
-              <Typography className="mt-[20px]">
+              <Typography className="mt-[20px] text-white">
                 {data[activeIndex].description}
               </Typography>
               <div className="mt-[48px]">
-                <Button>
+                <Button onClick={onNavigate}>
                   Explore
                   <ArrowLongRightIcon className="w-6 h-6 ml-[24px]" />
                 </Button>
@@ -74,6 +74,7 @@ const Header = ({ data }) => {
                       title={item.title}
                       rating={item.rating}
                       cover={item.cover}
+                      id={index}
                     />
                   );
                 })}
