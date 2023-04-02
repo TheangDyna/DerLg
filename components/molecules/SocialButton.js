@@ -12,7 +12,7 @@ const SocialButton = ({ image = "", title = "", ...rest }) => {
         alt="logo"
         className="object-cover object-center w-[36px] h-[36px]"
       />
-      <Typography className="text-black text-[18px]">
+      <Typography className="text-[#000000] text-[18px]">
         {title}
       </Typography>
     </button>

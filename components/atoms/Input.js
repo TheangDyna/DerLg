@@ -9,7 +9,7 @@ const Input = ({ className = "", type, ...rest }) => {
       <input
         {...rest}
         type={isShow ? "text" : type}
-        className={`input input-bordered border-black bg-inherit w-full text-black ${className}`}
+        className={`input input-bordered border-black bg-inherit w-full text-[#000000] ${className}`}
       />
       {type == "password" && (
         <ButtonIcon
