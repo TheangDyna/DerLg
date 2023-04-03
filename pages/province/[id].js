@@ -8,10 +8,9 @@ import {
   Typography,
   BackNavigation,
 } from "../../components";
-import { ArrowLongLeftIcon } from "@heroicons/react/24/outline";
 import { travel } from "../../utils";
 
-const header = "https://rare-gallery.com/thumbs/1242298-angkor-wat-art.jpg";
+const header = "https://amotravel.com/wp-content/uploads/2016/06/Siem-Reap-Cambodia.jpg";
 
 const ProvinceDetail = () => {
   const [showText, setShowText] = useState(true);
