@@ -18,7 +18,7 @@ const Home = () => {
   };
   return (
     <div>
-      <Header data={travel} onNavigate={() => scrollToSection()} />
+      <Header data={travel} onNavigate={scrollToSection} />
       <div
         className="px-[80px] pt-[64px] flex flex-col space-y-[48px]"
         id="body"

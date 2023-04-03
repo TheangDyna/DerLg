@@ -7,14 +7,21 @@ import {
   ProvinceCard,
   Typography,
   BackNavigation,
+  Button,
 } from "../../components";
 import { travel } from "../../utils";
+import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
-const header = "https://amotravel.com/wp-content/uploads/2016/06/Siem-Reap-Cambodia.jpg";
+const header =
+  "https://amotravel.com/wp-content/uploads/2016/06/Siem-Reap-Cambodia.jpg";
 
 const ProvinceDetail = () => {
   const [showText, setShowText] = useState(true);
 
+  const scrollToSection = () => {
+    document.getElementById("body").scrollIntoView({ behavior: "smooth" });
+  };
+  
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPosition = window.pageYOffset;
@@ -60,9 +67,13 @@ const ProvinceDetail = () => {
             accumsan eu. Nam vel lorem in turpis imperdiet egestas sed vel
             massa. Proin maximus laoreet sem, non varius velit cursus quis.
           </Typography>
+          <Button onClick={scrollToSection} className="mt-[32px]">
+            View More
+            <ArrowLongRightIcon className="w-6 h-6 ml-[24px]" />
+          </Button>
         </div>
       </div>
-      <div className="px-[80px] pt-[64px] flex flex-col gap-[48px]">
+      <div className="px-[80px] pt-[64px] flex flex-col gap-[48px]" id="body">
         <Typography variant="topic" className="text-white">
           Best Places
         </Typography>

@@ -14,6 +14,7 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/24/solid";
 
+
 const Header = ({ data, onNavigate }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 

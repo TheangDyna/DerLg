@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
   BackNavigation,
+  Button,
   ButtonIcon,
   Carousel,
   Footer,
@@ -21,6 +22,10 @@ const header =
 const Place = () => {
   const [isCollapse, setIsCollapse] = useState(false);
   const [showText, setShowText] = useState(true);
+
+  const scrollToSection = () => {
+    document.getElementById("body").scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +55,7 @@ const Place = () => {
           }}
           className="relative h-screen w-full bg-center"
         >
-        <BackNavigation title="Angkor Wat Temple - Place" />
+          <BackNavigation title="Angkor Wat Temple - Place" />
           <div className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] flex flex-col space-y-[32px]">
             <div>
               <Typography variant="display" className="text-center text-white">
@@ -62,7 +67,10 @@ const Place = () => {
                 showText ? "opacity-100" : "opacity-0"
               }`}
             >
-              <div className="flex justify-end">
+              <div className="flex justify-between items-center pl-4">
+                <Button className="text-black font-normal px-0 no-underline" variant="link" onClick={scrollToSection}>
+                  <Typography className="text-white">View More</Typography>
+                </Button>
                 <ButtonIcon
                   className="bg-inherit hover:bg-white hover:bg-opacity-50"
                   onClick={() => setIsCollapse(!isCollapse)}
@@ -76,7 +84,9 @@ const Place = () => {
               </div>
               <div className="pb-[32px] pt-4 px-4 flex items-center justify-center">
                 <div className="max-h-[300px] overflow-auto">
-                  <Typography className={`text-white ${isCollapse ? "" : "line-clamp-6"}`}>
+                  <Typography
+                    className={`text-white ${isCollapse ? "" : "line-clamp-6"}`}
+                  >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Aliquam gravida sem id porta tristique. Phasellus vel felis
                     vitae urna viverra accumsan. Sed at orci nisl. Nunc viverra
@@ -156,17 +166,23 @@ const Place = () => {
           </div>
         </div>
       </div>
-      <div className="px-[80px] pt-[64px] flex flex-col gap-[48px]">
-        <Typography variant="topic" className="text-white">Map</Typography>
+      <div className="px-[80px] pt-[64px] flex flex-col gap-[48px]" id="body">
+        <Typography variant="topic" className="text-white">
+          Map
+        </Typography>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.9977012127747!2d103.8625010244372!3d13.412469260398458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3110168aea9a272d%3A0x3eaba81157b0418d!2sAngkor%20Wat!5e0!3m2!1sen!2skh!4v1680407482324!5m2!1sen!2skh"
           allowFullScreen=""
           loading="lazy"
           className="w-full h-[800px] rounded-[15px] mx-auto"
         />
-        <Typography variant="topic" className="text-white">Images</Typography>
+        <Typography variant="topic" className="text-white">
+          Images
+        </Typography>
         <ImageGrid />
-        <Typography variant="topic" className="text-white">Best Places</Typography>
+        <Typography variant="topic" className="text-white">
+          Best Places
+        </Typography>
         <Carousel show={6}>
           {travel.map((item, index) => {
             return (
